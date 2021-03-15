@@ -1,0 +1,25 @@
+<ion-content> 
+  <form >
+    <ion-item>
+      <ion-label position="floating">Nom</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Prenom</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Mot de passe</ion-label>
+      <ion-input type="password" required></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" shape="round" type="submit" (click)="storeData()" routerLink="/tabs" >Sauvegarder</ion-button>
+  </form>
+  <ion-button expand="block" shape="round" (click)="storeData()" routerLink="/connexion" >Connexion</ion-button>
+</ion-content>
