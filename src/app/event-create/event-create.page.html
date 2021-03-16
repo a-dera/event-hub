@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+  <ion-buttons slot="start">
+      <ion-back-button text="" icon="arrow-back" defaultHref="/tabs/event"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nouveau</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div class="padding">
+    
+    <div class="logo">
+      <ion-icon color="light" name="sunny"></ion-icon>
+      <!-- <img src="../../assets/logo.png"> -->
+    </div>
+
+    <ion-item >
+      <ion-label color="light" position="floating">Nom</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item >
+      <ion-label color="light" position="floating">Prenom</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item >
+      <ion-label color="light" position="floating">Date de naissance</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item >
+      <ion-label color="light" position="floating">Sexe</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item >
+      <ion-label color="light" position="floating">Ville</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item >
+      <ion-label color="light" position="floating">Email</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="light" position="floating">Mot de passe</ion-label>
+      <ion-input color="light" type="password" required></ion-input>
+    </ion-item>
+    <br>
+
+    <ion-button color="light" expand="block" shape="round" fill="outline" routerLink="/tabs">Valider</ion-button>
+    <br>
+    <ion-item lines="none">
+      <ion-label color="light" text-center>Déjà inscris?</ion-label>
+    </ion-item>
+    <ion-button color="tertiary" expand="block" shape="round" routerLink="/connexion">Connexion</ion-button>
+
+  </div>
+</ion-content>
