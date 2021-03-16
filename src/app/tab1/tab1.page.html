@@ -1,33 +1,23 @@
 <ion-content [fullscreen]="true">
-  <!-- <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Evenments</ion-title>
-    </ion-toolbar>
-  </ion-header>  -->
-
   <ion-list class="liste">
-    <ion-item>
-      <ion-card>
-        <img src="./cover.jpg" />
-        <ion-card-header>
-          <ion-card-subtitle>date et heure</ion-card-subtitle>
-          <ion-card-title>titre de l'événement</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <p>lieu de déroulement</p>
-          <ion-item>
-            <ion-button fill="outline" color="danger">
-              <ion-icon name="heart-outline"></ion-icon>
-              <ion-badge color="danger">2</ion-badge></ion-button>
-            <ion-button fill="outline" color="warning">
-              <ion-icon name="repeat-outline"></ion-icon>
-              <ion-badge color="warning">3</ion-badge></ion-button>
-          </ion-item>
-          <ion-button fill="" color ="primary" routerLink="/event-detail">Détails</ion-button>
-        </ion-card-content>
-      </ion-card>
-    </ion-item>
+    <ion-card>
+      <img src="./cover.jpg" />
+      <ion-card-header>
+        <ion-card-subtitle>date et heure</ion-card-subtitle>
+        <ion-card-title>titre de l'événement</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>lieu de déroulement</p>
+        <ion-item>
+          <ion-button size="small" fill="clear" (click)="onClick()" color="danger">
+            <ion-icon name="heart-outline"></ion-icon>
+            <ion-badge color="danger">2</ion-badge></ion-button>
+          <ion-button size="small" fill="clear" (click)="onClick()" color="warning">
+            <ion-icon name="repeat-outline"></ion-icon>
+            <ion-badge color="warning">3</ion-badge></ion-button>
+        </ion-item>
+        <ion-button fill="outline" size="small" color ="tertiary" routerLink="/event-detail">Détails</ion-button>
+      </ion-card-content>
+    </ion-card>
   </ion-list>
-
-  
 </ion-content>

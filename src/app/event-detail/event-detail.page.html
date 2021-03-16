@@ -1,9 +1,40 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>eventDetail</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="arrow-back" defaultHref="/tabs"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Evénéments</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    <img src="./cover.jpg" />
+    <ion-card-header>
+      <ion-card-subtitle>date et heure</ion-card-subtitle>
+      <ion-card-title>titre de l'événement</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>petite description de l'événement petite description de l'événement 
+      petite description de l'événement</p>
+      <br>
 
+      <p>prix: x.xxx franc CFA</p>
+      <br>
+
+      <p>lieu de déroulement</p>
+      <br>
+
+      <h2>Organisateur</h2>
+      <p>nom organisateur</p>
+
+      <ion-button size="small" fill="clear" (click)="onClick()" color="danger">
+        <ion-icon name="heart-outline"></ion-icon>
+        <ion-badge color="danger">2</ion-badge></ion-button>
+      <ion-button size="small" fill="clear" (click)="onClick()" color="warning">
+        <ion-icon name="repeat-outline"></ion-icon>
+        <ion-badge color="warning">3</ion-badge></ion-button>
+
+    </ion-card-content>
+  </ion-card>
 </ion-content>
