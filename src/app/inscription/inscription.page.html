@@ -1,25 +1,53 @@
-<ion-content> 
-  <form >
-    <ion-item>
-      <ion-label position="floating">Nom</ion-label>
+<ion-content >
+  <div class="padding">
+    
+    <div class="logo">
+      <ion-icon color="light" name="sunny"></ion-icon>
+      <!-- <img src="../../assets/logo.png"> -->
+    </div>
+
+    <ion-item >
+      <ion-label color="light" position="floating">Nom</ion-label>
       <ion-input type="text" required></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-label position="floating">Prenom</ion-label>
+
+    <ion-item >
+      <ion-label color="light" position="floating">Prenom</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item >
+      <ion-label color="light" position="floating">Date de naissance</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item >
+      <ion-label color="light" position="floating">Sexe</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item >
+      <ion-label color="light" position="floating">Ville</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item >
+      <ion-label color="light" position="floating">Email</ion-label>
       <ion-input type="text" required></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Email</ion-label>
-      <ion-input type="email" required></ion-input>
+      <ion-label color="light" position="floating">Mot de passe</ion-label>
+      <ion-input color="light" type="password" required></ion-input>
     </ion-item>
+    <br>
 
-    <ion-item>
-      <ion-label position="floating">Mot de passe</ion-label>
-      <ion-input type="password" required></ion-input>
+    <ion-button color="light" expand="block" shape="round" fill="outline" routerLink="/tabs">Valider</ion-button>
+    <br>
+    <ion-item lines="none">
+      <ion-label color="light" text-center>Déjà inscris?</ion-label>
     </ion-item>
+    <ion-button color="tertiary" expand="block" shape="round" routerLink="/connexion">Connexion</ion-button>
 
-    <ion-button expand="block" shape="round" type="submit" (click)="storeData()" routerLink="/tabs" >Sauvegarder</ion-button>
-  </form>
-  <ion-button expand="block" shape="round" (click)="storeData()" routerLink="/connexion" >Connexion</ion-button>
+  </div>
 </ion-content>
