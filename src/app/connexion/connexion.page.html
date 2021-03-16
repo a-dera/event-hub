@@ -1,28 +1,43 @@
-<ion-content>
-<div class="center">
-  <ion-item lines="full">
-    <ion-label position="floating">Email</ion-label>
-    <ion-input type="email" required></ion-input>
-  </ion-item>
+<ion-content >
+  <div class="padding">
+    
+    <div class="logo">
+      <ion-icon color="light" name="cloudy-night"></ion-icon>
+      <!-- <img src="../../assets/logo.png"> -->
+    </div>
 
-  <ion-item lines="full">
-    <ion-label position="floating">Mot de passe</ion-label>
-    <ion-input type="password" required></ion-input>
-  </ion-item>
+    <ion-item >
+      <ion-label color="light">Email</ion-label>
+      <ion-input color="light" type="mail" placeholder="Adresse email"></ion-input>
+    </ion-item>
 
-  <ion-item>
-    <ion-label>Connexion permamente</ion-label>
-    <ion-checkbox color="primary" checked [(ngModel)]="compte"></ion-checkbox>
-  </ion-item>
+    <ion-item>
+      <ion-label color="light">Mot de passe</ion-label>
+      <ion-input color="light" type="password" placeholder="Mot de passe"></ion-input>
+    </ion-item>
 
-  <ion-button type="submit" color="primary"
-  expand="block" shape="round" fill="outline"
-  (click)="login()" routerLink="/tabs">Connexion</ion-button>
+    <ion-item lines="none">
+      <ion-button color="light" slot="end" fill="clear">Mot de passe oublié ?</ion-button>
+    </ion-item>
 
-  <ion-button color="primary"
-  expand="block" shape="round" fill="outline"
- routerLink="/inscription">Inscription</ion-button>
-      <!-- <a [routerLink]="['/forgot-password']" class="small-text">Mot de passe oublié?</a> -->
-</div>
+    <ion-button color="light" expand="block" shape="round" fill="outline" routerLink="/tabs">Connexion</ion-button>
+    <br>
+    <ion-button color="tertiary" expand="block" shape="round" routerLink="/inscription">Inscription</ion-button>
 
+    <ion-item lines="none">
+      <ion-label color="light" text-center>Ou connectez-vous avec</ion-label>
+    </ion-item>
+    
+    <div class="flex">
+      <ion-button color="facebook" shape="round">
+        <ion-icon slot="start" name="logo-facebook"></ion-icon>
+        Facebook
+      </ion-button>
+      <ion-button color="google" color="youtube" shape="round">
+        <ion-icon slot="start" name="logo-google"></ion-icon>
+        Google
+      </ion-button>
+    </div>
+
+  </div>
 </ion-content>
