@@ -5,5 +5,19 @@
 </ion-header>
 
 <ion-content >
+  <ion-list>
+    <ion-item>
+      <ion-label>Event 1</ion-label>
+      <ion-button color="primary" routerLink="/event-detail">
+        <ion-icon name="eye"></ion-icon>
+      </ion-button>
+      <ion-button color="danger">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+      <ion-button color="warning">
+        <ion-icon name="pencil"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
   <ion-button color="tertiary" expand="block" shape="round" routerLink="/event-create">Créer un nouvel événément</ion-button>
 </ion-content>
