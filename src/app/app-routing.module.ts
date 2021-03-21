@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { canActivate, redirectUnauthorizedTo, redirectLoggedInTo } from '@angular/fire/auth-guard';
+
+// Renvoyer les users connectés directement vers l'acceuil
+const redirectLoggedInToApp = () => redirectLoggedInTo(['/tabs']);
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./slides/slides.module').then( m => m.SlidesPageModule)
+    loadChildren: () => import('./slides/slides.module').then( m => m.SlidesPageModule),
+    ...canActivate(redirectLoggedInToApp) // retour automatique
   },
   {
     path: 'tabs',

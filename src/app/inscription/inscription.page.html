@@ -6,6 +6,7 @@
       <!-- <img src="../../assets/logo.png"> -->
     </div>
 
+    <form> 
     <ion-item >
       <ion-label color="light" position="floating">Nom</ion-label>
       <ion-input type="text" required></ion-input>
@@ -17,32 +18,18 @@
     </ion-item>
 
     <ion-item >
-      <ion-label color="light" position="floating">Date de naissance</ion-label>
-      <ion-input type="text" required></ion-input>
-    </ion-item>
-
-    <ion-item >
-      <ion-label color="light" position="floating">Sexe</ion-label>
-      <ion-input type="text" required></ion-input>
-    </ion-item>
-
-    <ion-item >
-      <ion-label color="light" position="floating">Ville</ion-label>
-      <ion-input type="text" required></ion-input>
-    </ion-item>
-
-    <ion-item >
       <ion-label color="light" position="floating">Email</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input type="text" #email required></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label color="light" position="floating">Mot de passe</ion-label>
-      <ion-input color="light" type="password" required></ion-input>
+      <ion-input color="light" #password type="password" required></ion-input>
     </ion-item>
     <br>
 
-    <ion-button color="light" expand="block" shape="round" fill="outline" routerLink="/tabs">Valider</ion-button>
+    <ion-button color="light" expand="block" shape="round" fill="outline" (click)="signUp(email, password)">Valider</ion-button>
+    </form> 
     <br>
     <ion-item lines="none">
       <ion-label color="light" text-center>Déjà inscris?</ion-label>

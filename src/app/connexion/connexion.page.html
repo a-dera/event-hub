@@ -6,21 +6,23 @@
       <!-- <img src="../../assets/logo.png"> -->
     </div>
 
+    <form>
     <ion-item >
       <ion-label color="light">Email</ion-label>
-      <ion-input color="light" type="mail" placeholder="Adresse email"></ion-input>
+      <ion-input #email color="light" type="mail" placeholder="Adresse email"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label color="light">Mot de passe</ion-label>
-      <ion-input color="light" type="password" placeholder="Mot de passe"></ion-input>
+      <ion-input #password color="light" type="password" placeholder="Mot de passe"></ion-input>
     </ion-item>
 
     <ion-item lines="none">
       <ion-button color="light" slot="end" fill="clear">Mot de passe oublié ?</ion-button>
     </ion-item>
 
-    <ion-button color="light" expand="block" shape="round" fill="outline" routerLink="/tabs">Connexion</ion-button>
+    <ion-button (click)="logIn(email, password)" color="light" expand="block" shape="round" fill="outline">Connexion</ion-button>
+    </form>
     <br>
     <ion-button color="tertiary" expand="block" shape="round" routerLink="/inscription">Inscription</ion-button>
 
