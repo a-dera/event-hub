@@ -1,5 +1,5 @@
 import { Injectable, NgZone } from '@angular/core';
-import { auth } from 'firebase/app';
+import auth from 'firebase/app';
 import { User } from "./user";
 import { Router } from "@angular/router";
 import { AngularFireAuth } from "@angular/fire/auth";
@@ -32,25 +32,25 @@ export class AuthenticationService {
 
   // Login in with email/password
   SignIn(email, password) {
-    return this.ngFireAuth.auth.signInWithEmailAndPassword(email, password)
+    return this.ngFireAuth.signInWithEmailAndPassword(email, password)
   }
 
   // Register user with email/password
   RegisterUser(email, password) {
-    return this.ngFireAuth.auth.createUserWithEmailAndPassword(email, password)
+    return this.ngFireAuth.createUserWithEmailAndPassword(email, password)
   }
 
   // Email verification when new user register
-  SendVerificationMail() {
-    return this.ngFireAuth.auth.currentUser.sendEmailVerification()
+  /*SendVerificationMail() {
+    return this.ngFireAuth.currentUser.sendEmailVerification()
     .then(() => {
       this.router.navigate(['verify-email']);
     })
-  }
+  }*/
 
   // Recover password
   PasswordRecover(passwordResetEmail) {
-    return this.ngFireAuth.auth.sendPasswordResetEmail(passwordResetEmail)
+    return this.ngFireAuth.sendPasswordResetEmail(passwordResetEmail)
     .then(() => {
       window.alert('Password reset email has been sent, please check your inbox.');
     }).catch((error) => {
@@ -70,17 +70,12 @@ export class AuthenticationService {
     return (user.emailVerified !== false) ? true : false;
   }
 
-  // Sign in with Gmail
-  GoogleAuth() {
-    return this.AuthLogin(new auth.GoogleAuthProvider());
-  }
-
   // Auth providers
   AuthLogin(provider) {
-    return this.ngFireAuth.auth.signInWithPopup(provider)
+    return this.ngFireAuth.signInWithPopup(provider)
     .then((result) => {
        this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
+          this.router.navigate(['tabs']);
         })
       this.SetUserData(result.user);
     }).catch((error) => {
@@ -105,7 +100,7 @@ export class AuthenticationService {
 
   // Sign-out 
   SignOut() {
-    return this.ngFireAuth.auth.signOut().then(() => {
+    return this.ngFireAuth.signOut().then(() => {
       localStorage.removeItem('user');
       this.router.navigate(['connexion']);
     })
