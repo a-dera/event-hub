@@ -12,6 +12,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 
+import { Validator } from './helpers/validation.helpers';
+
 export const firebaseConfig = {
     apiKey: "AIzaSyCNycN7H1qrqj-YaeJmrv34XdMCavJ2N60",
     authDomain: "eventhub-210f2.firebaseapp.com",
@@ -28,7 +30,7 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFireStorageModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [Validator, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -13,45 +13,74 @@
     <div class="logo">
       <ion-icon color="light" name="sunny"></ion-icon>
     </div>
+
     <form [formGroup]="addnewform" (ngSubmit)="doAddnew()" novalidate>
     <ion-item >
       <ion-label color="light" position="floating">Libellé</ion-label>
       <ion-input [formControl]="addnewform.controls['libel']" type="text" required></ion-input>
-       <!-- <div *ngIf="addnewform.controls['producttitle'].dirty && !addnewform.controls['producttitle'].valid">
-            <p *ngIf="addnewform.controls['producttitle'].errors">Product title must be minimum 6 characters</p>
-          </div> -->
+
+       <div *ngIf="addnewform.controls['libel'].dirty && !addnewform.controls['libel'].valid">
+        <p *ngIf="addnewform.controls['libel'].errors">Erreur</p>
+       </div>
+
     </ion-item>
 
     <ion-item >
       <ion-label color="light" position="floating">Description</ion-label>
       <ion-textarea [formControl]="addnewform.controls['description']" type="text" required></ion-textarea>
+      
+      <div *ngIf="addnewform.controls['description'].dirty && !addnewform.controls['description'].valid">
+        <p *ngIf="addnewform.controls['description'].errors">Erreur</p>
+      </div>
+
     </ion-item>
 
     <ion-item >
       <ion-label color="light" position="floating">Date</ion-label>
       <ion-input [formControl]="addnewform.controls['date']" type="date" placeholder="" required></ion-input>
+    
+      <div *ngIf="addnewform.controls['date'].dirty && !addnewform.controls['date'].valid">
+        <p *ngIf="addnewform.controls['date'].errors">Erreur</p>
+      </div>
+
     </ion-item>
 
     <ion-item >
       <ion-label color="light" position="floating">Heure</ion-label>
       <ion-input [formControl]="addnewform.controls['heure']" type="time" placeholder="" required></ion-input>
+      
+      <div *ngIf="addnewform.controls['heure'].dirty && !addnewform.controls['heure'].valid">
+        <p *ngIf="addnewform.controls['heure'].errors">Erreur</p>
+      </div>
+
     </ion-item>
 
     <ion-item >
       <ion-label color="light" position="floating">Lieu</ion-label>
       <ion-input [formControl]="addnewform.controls['lieu']" type="text" required></ion-input>
+    
+      <div *ngIf="addnewform.controls['lieu'].dirty && !addnewform.controls['lieu'].valid">
+        <p *ngIf="addnewform.controls['lieu'].errors">Erreur</p>
+       </div>
+    
     </ion-item>
 
     <ion-item >
       <ion-label color="light" position="floating">Prix de participation</ion-label>
       <ion-input [formControl]="addnewform.controls['prix']" type="number" min="0" max="999999" required></ion-input>
+    
+      <div *ngIf="addnewform.controls['prix'].dirty && !addnewform.controls['prix'].valid">
+        <p *ngIf="addnewform.controls['prix'].errors">Erreur</p>
+       </div>
+    
     </ion-item>
 
     <br>
 
-    <ion-button color="primary" [disabled]="!addnewform.valid"
-    color="light" expand="block" shape="round" fill="outline" routerLink="/tabs/event">Publier l'événement</ion-button>
+    <ion-button type="submit" [disabled]="!addnewform.valid" (click)="doAddnew()"
+    color="light" expand="block" shape="round" fill="outline">Publier l'événement</ion-button>
     <br>
+  </form>
 
   </div>
 </ion-content>

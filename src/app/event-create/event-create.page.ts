@@ -33,7 +33,7 @@ export class EventCreatePage implements OnInit {
 
   async doAddnew() {
     
-    let productobj = {
+    let eventobj = {
       libel: this.addnewform.get('libel').value,
       description: this.addnewform.get('description').value,
       date: this.addnewform.get('date').value,
@@ -42,9 +42,9 @@ export class EventCreatePage implements OnInit {
       prix: this.addnewform.get('prix').value
     }
     try{
-      await this.fbstore.collection("events").add(productobj).then(data => {
+      await this.fbstore.collection("eventslist").add(eventobj).then(data => {
         console.log(data);
-        this.ngroute.navigate(['/tabs']);
+        this.ngroute.navigate(['/tabs/event']);
       })
     }catch(error){
       this.toastservice.showToast(error.message, 2000);
