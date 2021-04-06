@@ -1,23 +1,46 @@
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Recherche</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <ion-label>Je souhaite aller </ion-label>
+<ion-header collapse="condense">
+  <ion-toolbar>
+    <ion-title size="large">Recherche</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="content">
+  <div>
+    <p>Rechercher l'évènement qui vous correspond parmi des milliers publiés chaque jour.</p>
+  </div>
+
+  <ion-label class="label">Je souhaite aller </ion-label>
   <ion-item>
-    <ion-input placeholder="n'importe quand" clearInput ></ion-input>
+    <ion-input type="date" placeholder="n'importe quand"></ion-input>
   </ion-item>
 
-  <ion-label> à</ion-label>
+  <ion-label class="label"> à</ion-label>
   <ion-item>
     <ion-input placeholder="n'importe où" clearInput ></ion-input>
   </ion-item>
 
-  <ion-label> et participer à un événment de type</ion-label>
+  <ion-label class="label">Type de l'évènement</ion-label>
   <ion-item>
-    <ion-input placeholder="peu importe" clearInput ></ion-input>
+     <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Faites votre choix">
+      <ion-select-option value="brown">Familial</ion-select-option>
+      <ion-select-option value="blonde">Mariage</ion-select-option>
+      <ion-select-option value="black">Cinéma</ion-select-option>
+      <ion-select-option value="red">Kermesse</ion-select-option>
+      <ion-select-option value="blonde">Plein air</ion-select-option>
+      <ion-select-option value="black">Festival</ion-select-option>
+      <ion-select-option value="red">Show-up</ion-select-option>
+      <ion-select-option value="blonde">Grand public</ion-select-option>
+      <ion-select-option value="black">Conférence</ion-select-option>
+      <ion-select-option value="red">Colloque</ion-select-option>
+      <ion-select-option value="blonde">Foire</ion-select-option>
+      <ion-select-option value="black">Culturel</ion-select-option>
+      <ion-select-option value="red">Art</ion-select-option>
+    </ion-select>
   </ion-item>
 
+  <ion-button color="tertiary" expand="block" shape="round" routerLink="/connexion">Rechercher
+  </ion-button>
+
 </ion-content>
+
