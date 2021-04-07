@@ -1,16 +1,6 @@
-
-<ion-header collapse="condense">
-  <ion-toolbar>
-    <ion-title size="large">Recherche</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true" class="content">
-  <div>
-    <p>Rechercher l'évènement qui vous correspond parmi des milliers publiés chaque jour.</p>
-  </div>
-
-  <ion-label class="label">Je souhaite aller </ion-label>
+  <br> <br>
+  <ion-label class="label">Je souhaite aller à la date du</ion-label>
   <ion-item>
     <ion-input type="date" placeholder="n'importe quand"></ion-input>
   </ion-item>
@@ -39,8 +29,101 @@
     </ion-select>
   </ion-item>
 
-  <ion-button color="tertiary" expand="block" shape="round" routerLink="/connexion">Rechercher
-  </ion-button>
+  <ion-button color="tertiary" expand="block" shape="round">Rechercher</ion-button>
+
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col size="12">
+        <ion-slides [options]="options">
+
+          <ion-slide>
+            <ion-card class="card">
+              <ion-card-content class="ion-text-left">
+
+                <div class="img-wrapper">
+                  <ion-img src="https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></ion-img>
+                </div>
+                
+                <ion-card-title class="title">Some Awesome Dish Title</ion-card-title>
+                <ion-card-subtitle>Some description here</ion-card-subtitle>
+                <ion-card-subtitle>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                </ion-card-subtitle>
+              </ion-card-content>
+            </ion-card>
+          </ion-slide>
+
+          <ion-slide>
+            <ion-card class="card">
+              <ion-card-content class="ion-text-left">
+
+                <div class="img-wrapper">
+                  <ion-img src="https://images.pexels.com/photos/793759/pexels-photo-793759.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></ion-img>
+                </div>
+                
+                <ion-card-title class="title">Some Awesome Dish Title</ion-card-title>
+                <ion-card-subtitle>Some description here</ion-card-subtitle>
+                <ion-card-subtitle>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star-half"></ion-icon>
+                </ion-card-subtitle>
+              </ion-card-content>
+            </ion-card>
+          </ion-slide>
+
+          <ion-slide>
+            <ion-card class="card">
+              <ion-card-content class="ion-text-left">
+
+                <div class="img-wrapper">
+                  <ion-img src="https://images.pexels.com/photos/1291712/pexels-photo-1291712.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></ion-img>
+                </div>
+                
+                <ion-card-title class="title">Some Awesome Dish Title</ion-card-title>
+                <ion-card-subtitle>Some description here</ion-card-subtitle>
+                <ion-card-subtitle>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </ion-card-subtitle>
+              </ion-card-content>
+            </ion-card>
+          </ion-slide>
+
+          <ion-slide>
+            <ion-card class="card">
+              <ion-card-content class="ion-text-left">
+
+                <div class="img-wrapper">
+                  <ion-img src="https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></ion-img>
+                </div>
+                
+                <ion-card-title class="title">Some Awesome Dish Title</ion-card-title>
+                <ion-card-subtitle>Some description here</ion-card-subtitle>
+                <ion-card-subtitle>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                </ion-card-subtitle>
+              </ion-card-content>
+            </ion-card>
+          </ion-slide>
+
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
 

@@ -7,6 +7,16 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
+  options = {
+    centeredSlides: true,
+    slidesPerView: 1,
+    spaceBetween: -60,
+  };
+
+  categories = {
+    slidesPerView: 2.5,
+  };
+
   constructor() {}
 
 }
