@@ -25,26 +25,26 @@ export class CrudService {
   ) { }
 
   create(event: Event) {
-    return this.ngFirestore.collection('events').add(event);
+    return this.ngFirestore.collection('eventslist').add(event);
   }
 
   getEvents() {
-    return this.ngFirestore.collection('events').snapshotChanges();
+    return this.ngFirestore.collection('eventslist').snapshotChanges();
   }
   
   getEvent(id) {
-    return this.ngFirestore.collection('events').doc(id).valueChanges();
+    return this.ngFirestore.collection('eventslist').doc(id).valueChanges();
   }
 
   update(id, event: Event) {
-    this.ngFirestore.collection('events').doc(id).update(event)
+    this.ngFirestore.collection('eventslist').doc(id).update(event)
       .then(() => {
         this.router.navigate(['/tabs/home']);
       }).catch(error => console.log(error));;
   }
 
   delete(id: string) {
-    this.ngFirestore.doc('events/' + id).delete();
+    this.ngFirestore.doc('eventslist/' + id).delete();
   }
 
 }

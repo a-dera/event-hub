@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { ToastService } from '../services/toast.service';
+//import { ToastService } from '../services/toast.service';
 import { Router } from '@angular/router';
-import { AngularFirestore } from "@angular/fire/firestore";
-import { CrudService } from './../services/crud.service';
+import { CrudService } from '../services/crud.service';
 
 
 @Component({
@@ -19,12 +18,11 @@ export class EventCreatePage implements OnInit {
     private crudService: CrudService,
     public formBuilder: FormBuilder,    
     private router: Router,
-    private toastservice: ToastService,
-    private fbstore: AngularFirestore
+    //private toastservice: ToastService
     ) { }
 
   ngOnInit() {
-      this.eventForm = this.formBuilder.group({
+    this.eventForm = this.formBuilder.group({
       libel: [''],
       description: [''],
       date: [''],
@@ -33,6 +31,7 @@ export class EventCreatePage implements OnInit {
       prix: [''],
       organisateur: ['']
     })
+      
   }
 
   onSubmit() {
@@ -41,10 +40,11 @@ export class EventCreatePage implements OnInit {
       } else {
         this.crudService.create(this.eventForm.value)
         .then(() => {
-          this.eventForm.reset();
+          //this.eventForm.reset();
           this.router.navigate(['/tabs/event']);
         }).catch((err) => {
-          this.toastservice.showToast(err.message, 2000);
+          console.log(err)
+          // this.toastservice.showToast(err.message, 2000);
         });
       }
     }
