@@ -6,15 +6,15 @@
 
 <ion-content >
   <ion-list>
-    <ion-item>
-      <ion-label>Event 1</ion-label>
-      <ion-button color="primary" routerLink="/event-detail">
+    <ion-item *ngFor="let event of Events" >
+      <ion-label>{{event.libel}}</ion-label>
+      <ion-button color="primary" [routerLink]="['/event-detail/', event.id]">
         <ion-icon name="eye"></ion-icon>
       </ion-button>
-      <ion-button color="danger">
+      <ion-button color="danger" (click)="remove(event.id)">
         <ion-icon name="trash"></ion-icon>
       </ion-button>
-      <ion-button color="warning" routerLink="/event-update">
+      <ion-button color="warning" [routerLink]="['/event-update/', event.id]">
         <ion-icon name="pencil"></ion-icon>
       </ion-button>
     </ion-item>
