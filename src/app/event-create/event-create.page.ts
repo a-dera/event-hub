@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-//import { ToastService } from '../services/toast.service';
+import { ToastService } from '../services/toast.service';
 import { Router } from '@angular/router';
+// import { Key } from 'selenium-webdriver';
 import { CrudService } from '../services/crud.service';
 
 
@@ -12,40 +13,41 @@ import { CrudService } from '../services/crud.service';
 })
 export class EventCreatePage implements OnInit {
 
-  eventForm: FormGroup;
-
+  
+  libel: string;
+  description: string;
+  date: string;
+  heure: string;
+  lieu: string;
+  prix: string;
+  organisateur: string;
+      
   constructor(
     private crudService: CrudService,
-    public formBuilder: FormBuilder,    
     private router: Router,
-    //private toastservice: ToastService
+    private toastservice: ToastService
     ) { }
 
   ngOnInit() {
-    this.eventForm = this.formBuilder.group({
-      libel: [''],
-      description: [''],
-      date: [''],
-      heure: [''],
-      lieu: [''],
-      prix: [''],
-      organisateur: ['']
-    })
-      
   }
 
-  onSubmit() {
-      if (!this.eventForm.valid) {
-        return false;
-      } else {
-        this.crudService.create(this.eventForm.value)
-        .then(() => {
-          //this.eventForm.reset();
-          this.router.navigate(['/tabs/event']);
-        }).catch((err) => {
-          console.log(err)
-          // this.toastservice.showToast(err.message, 2000);
-        });
-      }
+    add(libel, description, date, heure, lieu, prix, organisateur){
+    let data = {
+      //$key: key.value,
+      libel:libel.value,
+      description: description.value,
+      date:  date.value, 
+      heure: heure.value, 
+      lieu: lieu.value, 
+      prix: prix.value, 
+      organisateur: organisateur.value
     }
+      this.crudService.create(data)
+      .then((res) => {
+        // Do something here
+        this.router.navigate(['tabs/event']);
+      }).catch((error) => {
+        this.toastservice.showToast(error.message, 2000);
+      })
+  }
 }

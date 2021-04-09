@@ -14,47 +14,48 @@
       <ion-icon color="light" name="sunny"></ion-icon>
     </div>
 
-    <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
-      <ion-item >
+    <form>
+      <ion-item>
         <ion-label color="light" position="floating">Libellé</ion-label>
-        <ion-input formControlName="libel" type="text" required></ion-input>
+        <ion-input #libel name="libel" type="text"></ion-input>
       </ion-item>
+
 
       <ion-item >
         <ion-label color="light" position="floating">Description</ion-label>
-        <ion-textarea formControlName="description" type="text" required></ion-textarea>
+        <ion-textarea #description name="description" type="text"></ion-textarea>
       </ion-item>
 
       <ion-item >
         <ion-label color="light" position="floating">Date</ion-label>
-        <ion-input formControlName ="date" type="date" placeholder="" required></ion-input>
+        <ion-input #date type="date" name="date" placeholder="" ></ion-input>
       </ion-item>
 
       <ion-item >
         <ion-label color="light" position="floating">Heure</ion-label>
-        <ion-input formControlName="heure" type="time" placeholder="" required></ion-input>
+        <ion-input #heure type="time" name="heure" placeholder=""></ion-input>
       </ion-item>
 
       <ion-item >
         <ion-label color="light" position="floating">Lieu</ion-label>
-        <ion-input formControlName ="lieu" type="text" required></ion-input>
+        <ion-input #lieu type="text" name="lieu" ></ion-input>
       </ion-item>
 
       <ion-item >
         <ion-label color="light" position="floating">Prix de participation</ion-label>
-        <ion-input formControlName="prix" type="number" min="0" max="999999" required></ion-input>
+        <ion-input #prix type="number" name="prix" min="0" max="999999" ></ion-input>
       </ion-item>
 
       <ion-item >
         <ion-label color="light" position="floating">Organisateur</ion-label>
-        <ion-input formControlName ="organisateur" type="text" required></ion-input>
+        <ion-input #organisateur name="organisateur" type="text" ></ion-input>
       </ion-item>
 
       <br>
 
-      <ion-button type="submit" color="light" expand="block" shape="round" fill="outline">Publier l'événement</ion-button>
+      <ion-button (click)="add(libel, description, date, heure, lieu, prix, organisateur)"
+      type="submit" color="light" expand="block" shape="round" fill="outline">Publier l'événement</ion-button>
       
-      <br>
     </form>
 
   </div>
