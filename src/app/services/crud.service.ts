@@ -32,10 +32,14 @@ export class CrudService {
     return this.ngFirestore.collection('events').snapshotChanges();
   }
   
-  getEvent(id) {
+  /*getEvent(id) {
     return this.ngFirestore.collection('events').doc(id).valueChanges();
-  }
+  }*/
 
+  getEvent(id: string) {
+    return this.ngFirestore.collection('events').doc<Event>(id).valueChanges();
+  }
+ 
   update(id, event: Event) {
     this.ngFirestore.collection('events').doc(id).update(event)
       .then(() => {

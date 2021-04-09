@@ -8,33 +8,29 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-card>
     <img src=".../../assets/rasht.png" />
     <ion-card-header>
-      <ion-card-subtitle>date et heure</ion-card-subtitle>
-      <ion-card-title>titre de l'événement</ion-card-title>
+      <ion-card-subtitle>{{event?.date}} {{event?.heure}}</ion-card-subtitle>
+      <ion-card-title>{{event?.libel}}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <p>petite description de l'événement petite description de l'événement 
-      petite description de l'événement</p>
+      <p>{{event?.description}}</p>
       <br>
-
-      <p>prix: x.xxx franc CFA</p>
+      <p>Prix: {{event?.prix}} franc CFA</p>
       <br>
-
-      <p>lieu de déroulement</p>
+      <p>{{event?.lieu}}</p>
       <br>
-
       <h2>Organisateur</h2>
-      <p>nom organisateur</p>
-
-      <ion-button size="small" fill="clear" (click)="onClick()" color="danger">
+      <p>{{event?.organisateur}}</p>
+      <ion-button size="small" fill="clear" color="danger">
         <ion-icon name="heart-outline"></ion-icon>
         <ion-badge color="danger">2</ion-badge></ion-button>
-      <ion-button size="small" fill="clear" (click)="onClick()" color="warning">
+      <ion-button size="small" fill="clear" color="warning">
         <ion-icon name="repeat-outline"></ion-icon>
         <ion-badge color="warning">3</ion-badge></ion-button>
 
     </ion-card-content>
+  </ion-card>
   
 </ion-content>

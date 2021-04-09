@@ -24,7 +24,7 @@ const routes: Routes = [
     loadChildren: () => import('./inscription/inscription.module').then( m => m.InscriptionPageModule)
   },
   {
-    path: 'event-detail',
+    path: 'event-detail/:id',
     loadChildren: () => import('./event-detail/event-detail.module').then( m => m.EventDetailPageModule)
   },
   {
@@ -32,7 +32,7 @@ const routes: Routes = [
     loadChildren: () => import('./event-create/event-create.module').then( m => m.EventCreatePageModule)
   },
   {
-    path: 'event-update',
+    path: 'event-update/:id',
     loadChildren: () => import('./event-update/event-update.module').then( m => m.EventUpdatePageModule)
   }
 ];
