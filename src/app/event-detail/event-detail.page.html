@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header translucent="true">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button text="" icon="arrow-back" defaultHref="/tabs"></ion-back-button>
@@ -7,28 +7,30 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-card>
-    <img src=".../../assets/rasht.png" />
+<ion-content fullscreen>
+  <ion-card class="card">
+    <div class="img-wrapper">
+      <ion-img  src="https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></ion-img>
+    </div>
     <ion-card-header>
-      <ion-card-subtitle>{{event?.date}} {{event?.heure}}</ion-card-subtitle>
-      <ion-card-title>{{event?.libel}}</ion-card-title>
+      <ion-card-subtitle>{{event?.date}} {{event?.heure}} <strong>{{event?.lieu}}</strong></ion-card-subtitle>
+      <ion-card-title class="title">{{event?.libel}}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <p>{{event?.description}}</p>
       <br>
-      <p>Prix: {{event?.prix}} franc CFA</p>
+      <p> <strong>Prix:</strong> {{event?.prix}} franc CFA</p>
       <br>
-      <p>{{event?.lieu}}</p>
-      <br>
-      <h2>Organisateur</h2>
-      <p>{{event?.organisateur}}</p>
-      <ion-button size="small" fill="clear" color="danger">
-        <ion-icon name="heart-outline"></ion-icon>
-        <ion-badge color="danger">2</ion-badge></ion-button>
+
+      <h2><u>Organisateur : </u><strong> {{event?.organisateur}}</strong> </h2>
+
       <ion-button size="small" fill="clear" color="warning">
-        <ion-icon name="repeat-outline"></ion-icon>
-        <ion-badge color="warning">3</ion-badge></ion-button>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-outline"></ion-icon>
+      </ion-button>
 
     </ion-card-content>
   </ion-card>
