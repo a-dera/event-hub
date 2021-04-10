@@ -40,10 +40,10 @@ export class CrudService {
     return this.ngFirestore.collection('events').doc<Event>(id).valueChanges();
   }
  
-  update(id, event: Event) {
-    this.ngFirestore.collection('events').doc(id).update(event)
+  updateEvent(id, event: Event) {
+    this.ngFirestore.collection('events').doc<Event>(id).update(event)
       .then(() => {
-        this.router.navigate(['/tabs/home']);
+        this.router.navigate(['/tabs/events']);
       }).catch(error => console.log(error));;
   }
 

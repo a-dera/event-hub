@@ -13,43 +13,45 @@
     <div class="logo">
       <ion-icon color="light" name="star"></ion-icon>
     </div>
-    <!-- techniquementcette partie sera réservée au cover.
-    prise de photo native ou selection de la galerie -->
 
+    <form>
     <ion-item >
       <ion-label color="light" position="floating">Libellé</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input type="text" #libel name="libel"  value="{{event?.libel}}" required></ion-input>
     </ion-item>
 
     <ion-item >
       <ion-label color="light" position="floating">Description</ion-label>
-      <ion-textarea type="text" required></ion-textarea>
+      <ion-textarea type="text" #description name="description" value="{{event?.description}}" required></ion-textarea>
     </ion-item>
 
     <ion-item >
       <ion-label color="light" position="floating">Date</ion-label>
-      <ion-input type="date" placeholder="" required></ion-input>
+      <ion-input type="date" #date name="date" value="{{event?.date}}" required></ion-input>
     </ion-item>
 
     <ion-item >
       <ion-label color="light" position="floating">Heure</ion-label>
-      <ion-input type="time" placeholder="" required></ion-input>
+      <ion-input type="time" #time name="time" value="{{event?.heure}}" required></ion-input>
     </ion-item>
 
     <ion-item >
       <ion-label color="light" position="floating">Lieu</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input type="text" #lieu name="lieu" value="{{event?.lieu}}" required></ion-input>
     </ion-item>
 
     <ion-item >
       <ion-label color="light" position="floating">Prix de participation</ion-label>
-      <ion-input type="number" min="0" max="999999" required></ion-input>
+      <ion-input type="number" #prix name="prix"  value="{{event?.prix}}" min="0" max="999999" required></ion-input>
     </ion-item>
 
     <br>
 
-    <ion-button color="light" expand="block" shape="round" fill="outline" routerLink="/tabs/event">Valider les modifications</ion-button>
+    <ion-button (click)="upda(libel, description, date, heure, lieu, prix, organisateur)"
+    color="light" expand="block" shape="round" fill="outline" >Valider les modifications</ion-button>
     <br>
+    </form>
+    
 
   </div>
 </ion-content>
