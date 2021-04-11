@@ -3,7 +3,6 @@ import { AuthenticationService } from "../shared/authentication-service";
 import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab5',
@@ -19,8 +18,8 @@ export class Tab5Page implements OnInit {
   ) { }
 
   ngOnInit() {
-    var user = this.ngFireAuth.currentUser; // code from firebase docs
-    }
+  }
+    
   deconnexion() {
     this.authService.SignOut()
   }

@@ -90,6 +90,8 @@ export class AuthenticationService {
       uid: user.uid,
       email: user.email,
       displayName: user.displayName,
+      nom:user.nom,
+      prenom:user.prenom,
       photoURL: user.photoURL,
       emailVerified: user.emailVerified
     }

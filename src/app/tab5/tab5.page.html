@@ -1,16 +1,16 @@
 <ion-content>
 
     <div class="header">
-      <h2>{{user.email}} </h2>
+      <h2>EventHub! </h2>
 
       <div class="space-between">
         <div class="followings">
-          <ion-badge color="primary" mode="ios">42</ion-badge>
-          <p>Likes</p>
+          <ion-badge color="primary" mode="ios">19</ion-badge>
+          <p>Etoiles</p>
         </div>
 
         <div class="followings">
-          <ion-badge color="primary" mode="ios">102</ion-badge>
+          <ion-badge color="primary" mode="ios">05</ion-badge>
           <p>Evénéments</p>
         </div>
       </div>
@@ -28,11 +28,11 @@
 
     <h2 class="recent">Profil</h2>
 
-    <ion-card class="card">
+    <ion-card class="card" *ngIf="authService.userData as user">
       <ion-card-content class="ion-text-left">
         
-        <ion-card-title class="title">Nom et Prénom</ion-card-title>
-        <ion-card-subtitle>Email</ion-card-subtitle>
+        <ion-card-title class="title">{{user.nom}} {{user.prenom}}</ion-card-title>
+        <ion-card-subtitle>{{user.email}}</ion-card-subtitle>
         
       </ion-card-content>
     </ion-card>
