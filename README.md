@@ -31,7 +31,7 @@ _A quel rythme ? (bah on verra bien 😉)_
 
 ## Versions
 **Dernière version stable  :** Pas de version stable pour l'instant! (Coming soon..) <br>
-**Toute dernière version (developpement)  :** [v.0.7.8](https://github.com/a-dera/event-hub/releases/tag/v.0.7.8)<br>
+**Toute dernière version (developpement)  :** [v.0.7.8](https://github.com/a-dera/event-hub/releases/tag/v0.7.8)<br>
 Listes des différentes Versions  : [ici](https://github.com/a-dera/event-hub/tags)
 
 
