@@ -36,28 +36,7 @@
       <ion-col size="12">
         <ion-slides [options]="options">
 
-          <ion-slide>
-            <ion-card class="card">
-              <ion-card-content class="ion-text-left">
-
-                <div class="img-wrapper">
-                  <ion-img src="https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></ion-img>
-                </div>
-                
-                <ion-card-title class="title">Libellé de l'évènement</ion-card-title>
-                <ion-card-subtitle>Date -- Lieu</ion-card-subtitle>
-                <ion-card-subtitle>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star-outline"></ion-icon>
-                </ion-card-subtitle>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-
-          <ion-slide>
+          <ion-slide *ngFor="let event of Events">
             <ion-card class="card">
               <ion-card-content class="ion-text-left">
 
@@ -65,56 +44,14 @@
                   <ion-img src="https://images.pexels.com/photos/793759/pexels-photo-793759.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></ion-img>
                 </div>
                 
-                <ion-card-title class="title">Festi Lucha</ion-card-title>
-                <ion-card-subtitle>05-06 Avril -- Ouaga</ion-card-subtitle>
+                <ion-card-title class="title">{{event.libel}}</ion-card-title>
+                <ion-card-subtitle>{{event.date}} -- {{event.lieu}}</ion-card-subtitle>
                 <ion-card-subtitle>
                   <ion-icon name="star"></ion-icon>
                   <ion-icon name="star"></ion-icon>
                   <ion-icon name="star"></ion-icon>
                   <ion-icon name="star"></ion-icon>
                   <ion-icon name="star-half"></ion-icon>
-                </ion-card-subtitle>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-
-          <ion-slide>
-            <ion-card class="card">
-              <ion-card-content class="ion-text-left">
-
-                <div class="img-wrapper">
-                  <ion-img src="https://images.pexels.com/photos/1291712/pexels-photo-1291712.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></ion-img>
-                </div>
-                
-                <ion-card-title class="title">AfroPolitan</ion-card-title>
-                <ion-card-subtitle>17 Avril -- Ouaga</ion-card-subtitle>
-                <ion-card-subtitle>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                </ion-card-subtitle>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-
-          <ion-slide>
-            <ion-card class="card">
-              <ion-card-content class="ion-text-left">
-
-                <div class="img-wrapper">
-                  <ion-img src="https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></ion-img>
-                </div>
-                
-                <ion-card-title class="title">72h de l'IBAM</ion-card-title>
-                <ion-card-subtitle>03-05 Mai -- Ouaga</ion-card-subtitle>
-                <ion-card-subtitle>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star-outline"></ion-icon>
-                  <ion-icon name="star-outline"></ion-icon>
                 </ion-card-subtitle>
               </ion-card-content>
             </ion-card>
@@ -229,58 +166,16 @@
           <ion-col size="12">
             <ion-slides [options]="options">
     
-              <ion-slide>
+               <ion-slide *ngFor="let event of Events">
                 <ion-card class="card">
-                  <ion-card-content class="ion-text-left">
-    
+                  <ion-card-content class="ion-text-left" [routerLink]="['/event-detail/', event.id]">
+
                     <div class="img-wrapper">
-                      <ion-img src="https://images.pexels.com/photos/109275/pexels-photo-109275.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></ion-img>
+                      <ion-img src="https://images.pexels.com/photos/793759/pexels-photo-793759.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></ion-img>
                     </div>
                     
-                    <ion-card-title class="title">Some Awesome Title</ion-card-title>
-                    <ion-card-subtitle>Some description here</ion-card-subtitle>
-                    <ion-card-subtitle>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                    </ion-card-subtitle>
-                  </ion-card-content>
-                </ion-card>
-              </ion-slide>
-    
-              <ion-slide>
-                <ion-card class="card">
-                  <ion-card-content class="ion-text-left">
-    
-                    <div class="img-wrapper">
-                      <ion-img src="https://images.pexels.com/photos/616840/pexels-photo-616840.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></ion-img>
-                    </div>
-                    
-                    <ion-card-title class="title">Some Awesome Title</ion-card-title>
-                    <ion-card-subtitle>Some description here</ion-card-subtitle>
-                    <ion-card-subtitle>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                    </ion-card-subtitle>
-                  </ion-card-content>
-                </ion-card>
-              </ion-slide>
-    
-              <ion-slide>
-                <ion-card class="card">
-                  <ion-card-content class="ion-text-left">
-    
-                    <div class="img-wrapper">
-                      <ion-img src="https://images.pexels.com/photos/1437629/pexels-photo-1437629.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></ion-img>
-                    </div>
-                    
-                    <ion-card-title class="title">Some Awesome Title</ion-card-title>
-                    <ion-card-subtitle>Some description here</ion-card-subtitle>
+                    <ion-card-title class="title">{{event.libel}}</ion-card-title>
+                    <ion-card-subtitle>{{event.date}} -- {{event.lieu}}</ion-card-subtitle>
                     <ion-card-subtitle>
                       <ion-icon name="star"></ion-icon>
                       <ion-icon name="star"></ion-icon>
@@ -288,6 +183,7 @@
                       <ion-icon name="star"></ion-icon>
                       <ion-icon name="star-half"></ion-icon>
                     </ion-card-subtitle>
+                    <br>
                   </ion-card-content>
                 </ion-card>
               </ion-slide>
@@ -296,19 +192,5 @@
           </ion-col>
         </ion-row>
       </ion-grid>
-    
-      <div class="ion-padding">
-        <ion-row>
-          <ion-col size="6">
-            <ion-badge color="light" class="ion-margin-end">
-              Habib Dev.
-            </ion-badge>
-          </ion-col>
-          <ion-col size="6" class="ion-text-end">
-            <ion-badge color="light">
-              habib.al-mawali.com
-            </ion-badge>
-          </ion-col>
-        </ion-row>
-      </div>
+
 </ion-content>
