@@ -38,7 +38,7 @@
 
           <ion-slide *ngFor="let event of Events">
             <ion-card class="card">
-              <ion-card-content class="ion-text-left">
+              <ion-card-content class="ion-text-left" [routerLink]="['/event-detail/', event.id]">
 
                 <div class="img-wrapper">
                   <ion-img src="https://images.pexels.com/photos/793759/pexels-photo-793759.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></ion-img>

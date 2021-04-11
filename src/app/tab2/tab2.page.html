@@ -1,33 +1,10 @@
 <ion-content [fullscreen]="true" class="content">
   <br> <br>
-  <ion-label class="label">Je souhaite aller à la date du</ion-label>
-  <ion-item>
-    <ion-input type="date" placeholder="n'importe quand"></ion-input>
-  </ion-item>
 
-  <ion-label class="label"> à</ion-label>
-  <ion-item>
-    <ion-input placeholder="n'importe où" clearInput ></ion-input>
-  </ion-item>
-
-  <ion-label class="label">Type de l'évènement</ion-label>
-  <ion-item>
-     <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Faites votre choix">
-      <ion-select-option value="brown">Familial</ion-select-option>
-      <ion-select-option value="blonde">Mariage</ion-select-option>
-      <ion-select-option value="black">Cinéma</ion-select-option>
-      <ion-select-option value="red">Kermesse</ion-select-option>
-      <ion-select-option value="blonde">Plein air</ion-select-option>
-      <ion-select-option value="black">Festival</ion-select-option>
-      <ion-select-option value="red">Show-up</ion-select-option>
-      <ion-select-option value="blonde">Grand public</ion-select-option>
-      <ion-select-option value="black">Conférence</ion-select-option>
-      <ion-select-option value="red">Colloque</ion-select-option>
-      <ion-select-option value="blonde">Foire</ion-select-option>
-      <ion-select-option value="black">Culturel</ion-select-option>
-      <ion-select-option value="red">Art</ion-select-option>
-    </ion-select>
-  </ion-item>
+  <ion-searchbar 
+    showcancelbutton=""
+    (ionInput)="filterList($event)"
+  ></ion-searchbar>
 
   <ion-button color="tertiary" expand="block" shape="round">Rechercher</ion-button>
 
@@ -36,84 +13,21 @@
       <ion-col size="12">
         <ion-slides [options]="options">
 
-          <ion-slide>
+          <ion-slide *ngFor="let event of events">
             <ion-card class="card">
-              <ion-card-content class="ion-text-left">
+              <ion-card-content class="ion-text-left" [routerLink]="['/event-detail/', event.id]">
 
                 <div class="img-wrapper">
                   <ion-img src="https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></ion-img>
                 </div>
                 
-                <ion-card-title class="title">Some Awesome Dish Title</ion-card-title>
-                <ion-card-subtitle>Some description here</ion-card-subtitle>
+                <ion-card-title class="title">{{ event.libel}}</ion-card-title>
+                <ion-card-subtitle>{{event.date}} -- {{event.lieu}}</ion-card-subtitle>
                 <ion-card-subtitle>
                   <ion-icon name="star"></ion-icon>
                   <ion-icon name="star"></ion-icon>
                   <ion-icon name="star"></ion-icon>
                   <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star-outline"></ion-icon>
-                </ion-card-subtitle>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-
-          <ion-slide>
-            <ion-card class="card">
-              <ion-card-content class="ion-text-left">
-
-                <div class="img-wrapper">
-                  <ion-img src="https://images.pexels.com/photos/793759/pexels-photo-793759.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></ion-img>
-                </div>
-                
-                <ion-card-title class="title">Some Awesome Dish Title</ion-card-title>
-                <ion-card-subtitle>Some description here</ion-card-subtitle>
-                <ion-card-subtitle>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star-half"></ion-icon>
-                </ion-card-subtitle>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-
-          <ion-slide>
-            <ion-card class="card">
-              <ion-card-content class="ion-text-left">
-
-                <div class="img-wrapper">
-                  <ion-img src="https://images.pexels.com/photos/1291712/pexels-photo-1291712.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></ion-img>
-                </div>
-                
-                <ion-card-title class="title">Some Awesome Dish Title</ion-card-title>
-                <ion-card-subtitle>Some description here</ion-card-subtitle>
-                <ion-card-subtitle>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                </ion-card-subtitle>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-
-          <ion-slide>
-            <ion-card class="card">
-              <ion-card-content class="ion-text-left">
-
-                <div class="img-wrapper">
-                  <ion-img src="https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></ion-img>
-                </div>
-                
-                <ion-card-title class="title">Some Awesome Dish Title</ion-card-title>
-                <ion-card-subtitle>Some description here</ion-card-subtitle>
-                <ion-card-subtitle>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star-outline"></ion-icon>
                   <ion-icon name="star-outline"></ion-icon>
                 </ion-card-subtitle>
               </ion-card-content>
