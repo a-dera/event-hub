@@ -26,7 +26,7 @@ Application hybride de gestion d'annonces
 * Social sharing
 * Social Auth (pourqoi pas?)
 
-_A quel rythme ? (bah on verra bien)_
+_A quel rythme ? (bah on verra bien 😉)_
 
 
 ## Versions
