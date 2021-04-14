@@ -25,12 +25,12 @@ export class EventDetailPage implements OnInit {
     private crudService: CrudService,
     private route: ActivatedRoute) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     /*this.crudService.getEvent(this.id).subscribe((res) => {
       return this.Event;
     });*/
     const eventId: string = this.route.snapshot.paramMap.get('id');
-    this.crudService.getEvent(eventId).subscribe(event => {
+    (await this.crudService.getUserEvent(eventId)).subscribe(event => {
       this.event = event;
     });
   }
