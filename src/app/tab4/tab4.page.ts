@@ -22,8 +22,8 @@ export class Tab4Page implements OnInit {
 
   constructor(private crudService: CrudService) { }
 
-  ngOnInit( ) {
-    this.crudService.getEvents().subscribe((res) => {
+  async ngOnInit( ) {
+    (await this.crudService.getUserEvents()).subscribe((res) => {
       this.Events = res.map((t) => {
         return {
           id: t.payload.doc.id,
@@ -33,8 +33,8 @@ export class Tab4Page implements OnInit {
     });
   }
 
-   eventList() {
-    this.crudService.getEvents()
+   async eventList() {
+    (await this.crudService.getUserEvents())
     .subscribe((data) => {
       console.log(data)
     })

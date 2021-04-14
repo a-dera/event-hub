@@ -34,16 +34,26 @@ export class CrudService {
     return this.ngFirestore.collection('people').doc(currentUser.uid).collection('events').add(event);
   }
 
+  //afficher tous les events (sur la page home, visible par tout le monde)
   getEvents() {
     return this.ngFirestore.collection('events').snapshotChanges();
   }
-  
-  /*getEvent(id) {
-    return this.ngFirestore.collection('events').doc(id).valueChanges();
-  }*/
 
+  //affficher les events de d'un user donné (sur la page de gestion)--uniquement visible par l'auteur
+  async getUserEvents() {
+    let currentUser = await this.ngFireAuth.currentUser;
+    if(currentUser){
+    return this.ngFirestore.collection('people').doc(currentUser.uid).collection('events').snapshotChanges();
+    }
+  }
+  
   getEvent(id: string) {
     return this.ngFirestore.collection('events').doc<Event>(id).valueChanges();
+  }
+
+  async getUserEvent(id: string) {
+    let currentUser = await this.ngFireAuth.currentUser;
+    return this.ngFirestore.collection('people').doc(currentUser.uid).collection('events').doc<Event>(id).valueChanges();
   }
  
   updateEvent(id, event: Event) {
@@ -53,8 +63,10 @@ export class CrudService {
       }).catch(error => console.log(error));;
   }
 
-  delete(id: string) {
-    this.ngFirestore.doc('events/' + id).delete();
+  async delete(id: string) {
+    let currentUser = await this.ngFireAuth.currentUser;
+    //this.ngFirestore.collection('people').doc('currentUser.uid/events/' + id).delete();
+    this.ngFirestore.collection('people').doc(currentUser.uid).collection('events').doc(id).delete()
   }
 
   /*encodeImageUri(imageUri, callback) {
