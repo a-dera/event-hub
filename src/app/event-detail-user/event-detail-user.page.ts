@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CrudService } from './../services/crud.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
+
 export class Event {
   libel: string;
   description: string;
@@ -11,23 +12,23 @@ export class Event {
   prix: string;
   organisateur: string;
  }
+
 @Component({
-  selector: 'app-event-detail',
-  templateUrl: './event-detail.page.html',
-  styleUrls: ['./event-detail.page.scss'],
+  selector: 'app-event-detail-user',
+  templateUrl: './event-detail-user.page.html',
+  styleUrls: ['./event-detail-user.page.scss'],
 })
+export class EventDetailUserPage implements OnInit {
 
-export class EventDetailPage implements OnInit {
-
- public event: Event;
+  public event: Event;
 
   constructor(
     private crudService: CrudService,
     private route: ActivatedRoute) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     const eventId: string = this.route.snapshot.paramMap.get('id');
-    (this.crudService.getEvent(eventId)).subscribe(event => {
+    (await this.crudService.getUserEvent(eventId)).subscribe(event => {
       this.event = event;
     });
   }
