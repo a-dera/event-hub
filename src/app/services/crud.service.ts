@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from "@angular/router";
+import { AngularFireAuth } from "@angular/fire/auth";
 //import 'firebase/storage';
 //import * as firebase from 'firebase/app';
 
@@ -24,11 +25,13 @@ export class CrudService {
 
   constructor(
     private ngFirestore: AngularFirestore,
+    public ngFireAuth: AngularFireAuth,
     private router: Router
   ) { }
 
-  create(event: Event) {
-    return this.ngFirestore.collection('events').add(event);
+  async create(event: Event) {
+    let currentUser = await this.ngFireAuth.currentUser;
+    return this.ngFirestore.collection('people').doc(currentUser.uid).collection('events').add(event);
   }
 
   getEvents() {

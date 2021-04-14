@@ -24,7 +24,7 @@ export class EventCreatePage implements OnInit {
   lieu: string;
   prix: string;
   organisateur: string;
-  image: any;
+  //image: any;
       
   constructor(
     private crudService: CrudService,
@@ -53,8 +53,8 @@ export class EventCreatePage implements OnInit {
         heure: heure.value, 
         lieu: lieu.value, 
         prix: prix.value, 
-        organisateur: organisateur.value,
-        image: this.image
+        organisateur: organisateur.value
+        //image: this.image
       }
         this.crudService.create(data)
         .then((res) => {
