@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from "@angular/router";
 import { AngularFireAuth } from "@angular/fire/auth";
+import { User } from '../shared/user';
 //import 'firebase/storage';
 //import * as firebase from 'firebase/app';
 
@@ -38,6 +39,12 @@ export class CrudService {
   getEvents() {
     return this.ngFirestore.collection('events').snapshotChanges();
   }
+
+  /* tentative vaine
+  async getEvents() {
+    let currentUser = await this.ngFireAuth.currentUser;
+    return this.ngFirestore.collection('people').doc(currentUser.uid).collection('events').snapshotChanges();  
+  }*/
 
   //affficher les events de d'un user donné (sur la page de gestion)--uniquement visible par l'auteur
   async getUserEvents() {
