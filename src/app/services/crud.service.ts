@@ -30,9 +30,13 @@ export class CrudService {
     private router: Router
   ) { }
 
+  //j'ai essayé des trouver une manière assez gymnastique pour créer les events de sorte à ce que ceux ci s'affichent
+  //sur la page principale ainsi que sur la page de gestion personnel de chaque utilisateur..
+  // Il doit y avaoir d'autres manières plus optimales ---(j'y reveindrai)
   async create(event: Event) {
     let currentUser = await this.ngFireAuth.currentUser;
-    return this.ngFirestore.collection('people').doc(currentUser.uid).collection('events').add(event);
+    this.ngFirestore.collection('people').doc(currentUser.uid).collection('events').add(event)
+    this.ngFirestore.collection('events').add(event);
   }
 
   //afficher tous les events (sur la page home, visible par tout le monde)
