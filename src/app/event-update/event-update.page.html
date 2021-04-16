@@ -45,9 +45,14 @@
       <ion-input type="number" #prix name="prix"  value="{{event?.prix}}" min="0" max="999999" required></ion-input>
     </ion-item>
 
+    <ion-item >
+        <ion-label color="light" position="floating">Organisateur</ion-label>
+        <ion-input #organisateur name="organisateur" value="{{event?.organisateur}}" type="text" ></ion-input>
+      </ion-item>
+
     <br>
 
-    <ion-button (click)="upda(libel, description, date, heure, lieu, prix, organisateur)"
+    <ion-button (click)="upda(libel, description, date, heure, lieu, prix, organisateur)" type="submit"
     color="light" expand="block" shape="round" fill="outline" >Valider les modifications</ion-button>
     <br>
     </form>

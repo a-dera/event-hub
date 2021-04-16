@@ -67,17 +67,20 @@ export class CrudService {
     return this.ngFirestore.collection('people').doc(currentUser.uid).collection('events').doc<Event>(id).valueChanges();
   }
  
-  updateEvent(id, event: Event) {
-    this.ngFirestore.collection('events').doc<Event>(id).update(event)
-      .then(() => {
+  async updateEvent(id, event: Event) {
+    let currentUser = await this.ngFireAuth.currentUser;
+    //this.ngFirestore.collection('events').doc<Event>(id).update(event)
+    //return this.ngFirestore.collection('people').doc(currentUser.uid).collection('events').doc<Event>(id).update(event);
+    return this.ngFirestore.collection('events').doc<Event>(id).set(event);
+      /*.then(() => {
         this.router.navigate(['/tabs/events']);
-      }).catch(error => console.log(error));;
+      }).catch(error => console.log(error));*/
   }
 
   async delete(id: string) {
     let currentUser = await this.ngFireAuth.currentUser;
-    //this.ngFirestore.collection('people').doc('currentUser.uid/events/' + id).delete();
     this.ngFirestore.collection('people').doc(currentUser.uid).collection('events').doc(id).delete()
+    this.ngFirestore.collection('events').doc(id).delete();
   }
 
   /*encodeImageUri(imageUri, callback) {

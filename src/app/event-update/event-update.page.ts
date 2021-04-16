@@ -35,10 +35,10 @@ export class EventUpdatePage implements OnInit {
     private toastservice: ToastService,
     private router: Router) { }
 
-  ngOnInit() {
+  async ngOnInit() {
 
     const eventId: string = this.route.snapshot.paramMap.get('id');
-    this.crudService.getEvent(eventId).subscribe(event => {
+    (await this.crudService.getUserEvent(eventId)).subscribe(event => {
       this.event = event;
     });
   }
@@ -56,6 +56,11 @@ export class EventUpdatePage implements OnInit {
       organisateur: organisateur.value
     }
       this.crudService.updateEvent(eventId, data)
+      .then((res) => {
+          this.router.navigate(['tabs/event']);
+        }).catch((error) => {
+          this.toastservice.showToast(error.message, 2000);
+        })
   }
 
 }
