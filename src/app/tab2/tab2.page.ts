@@ -28,6 +28,15 @@ export class Tab2Page {
   this.events = await this.initializeItems();
   }
 
+  doRefresh(event) {
+    console.log('Begin async operation');
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 2000);
+  }
+
   async initializeItems(): Promise<any> {
     const events = await this.firestore.collection('events')
       .valueChanges().pipe(first()).toPromise();

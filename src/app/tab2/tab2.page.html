@@ -1,4 +1,12 @@
 <ion-content [fullscreen]="true" class="content">
+    <ion-refresher class="refresh" slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
   <br> <br>
 
   <ion-searchbar 
