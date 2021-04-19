@@ -1,12 +1,5 @@
 # EventHub
 Application hybride de gestion d'annonces
- 
-<br>
-![shields](https://img.shields.io/badge/-EventHub-lightblue)
-<br>
-![GitHub All Releases](https://img.shields.io/github/downloads/a-dera/event-hub/total?color=Blue&label=downloads)
-<br>
-
 
 ## Usage et développement
  ```
@@ -20,11 +13,12 @@ Application hybride de gestion d'annonces
 
 ## TODO
 * Image upload (n'est pas très au point actuellement)
-* Actions spécifiques des utilisateurs et restrictions
+* ~~Actions spécifiques des utilisateurs et restrictions~~
 * Géolocalisation (associé à chaque évenement)
 * Filtres de recherche avancée
 * Social sharing
 * Social Auth (pourqoi pas?)
+* Ajouter les fonctionnalités liées aux annonces
 
 _A quel rythme ? (bah on verra bien 😉)_
 
