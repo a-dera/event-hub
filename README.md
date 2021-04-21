@@ -19,13 +19,13 @@ Application hybride de gestion d'annonces
 * Social sharing
 * Social Auth (pourqoi pas?)
 * Ajouter les fonctionnalités liées aux annonces
+* Backend de gestion (tableau de bord)
 
 _A quel rythme ? (bah on verra bien 😉)_
 
 
 ## Versions
-**Dernière version stable  :** Pas de version stable pour l'instant! (Coming soon..) <br>
-**Toute dernière version (developpement)  :** [v.0.7.8](https://github.com/a-dera/event-hub/releases/tag/v0.7.8)<br>
+**Dernière version stable  :** [v.1.1.4](https://github.com/a-dera/event-hub/releases/tag/v.1.1.4)<br>
 Listes des différentes Versions  : [ici](https://github.com/a-dera/event-hub/tags)
 
 
