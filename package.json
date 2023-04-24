@@ -33,7 +33,7 @@
     "cordova-plugin-statusbar": "^2.4.3",
     "cordova-support-android-plugin": "^1.0.2",
     "eslint": "^7.22.0",
-    "firebase": "^8.3.1",
+    "firebase": "^8.10.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
